@@ -1,27 +1,25 @@
 package com.example.ciclodevida
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 
-class MainActivity : Activity() {
+class SecondActivity : Activity() {
 
     companion object {
-        private const val TAG = "MainActivity"
+        private const val TAG = "SecondActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_second)
         Log.i(TAG, "onCreate chamado")
 
-        val buttonNext = findViewById<Button>(R.id.buttonNext)
-        buttonNext.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
+        val buttonBack = findViewById<Button>(R.id.buttonBack)
+        buttonBack.setOnClickListener {
+            finish()
         }
     }
 
